@@ -1,6 +1,6 @@
 import unittest
 
-from DailyCodingProblem.dcp.serializebinarytree.Node import Node
+from DailyCodingProblem.dcp.serializebinarytree.node import Node
 
 
 class TestNode(unittest.TestCase):
