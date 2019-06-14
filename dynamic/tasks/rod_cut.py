@@ -19,11 +19,17 @@ class RodCut:
         return q
 
     def find_optimum_cut_top_down_memoization(self, length=10):
-        pass
-
-    def find_optimum_cut_bottom_up(self, length=10):
         self.fill_rod_cut_memoized_result(length)
         return self.memoized_result[length]
+
+    def find_optimum_cut_bottom_up(self, length=10):
+        r = {0:0}
+        for j in range(1, length+1):
+            q = 1
+            for i in range(1, j+1):
+                q = max(q, self.prices[i] + r[j - i])
+            r[j] = q
+        return r[length]
 
     def fill_rod_cut_memoized_result(self, length=10):
         for i in range(0, length+1):
