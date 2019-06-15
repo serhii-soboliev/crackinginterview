@@ -6,4 +6,4 @@ install:
 addons:
   sonarcloud:
 script:
-  - pytest sonar-scanner
+  - pytest;sonar-scanner
