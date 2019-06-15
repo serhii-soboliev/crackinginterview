@@ -3,5 +3,8 @@ python:
   - "3.6"
 install:
   - pip install -r requirements.txt
+
+addons:
+  sonarcloud:
 script:
-  - pytest
+  - pytest sonar-scanner
