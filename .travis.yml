@@ -6,5 +6,6 @@ install:
 addons:
   sonarcloud:
     organization: "sergiysobolev-github"
+    projectKey: "SergiySobolev_crackinginterview"
 script:
   - pytest;sonar-scanner
