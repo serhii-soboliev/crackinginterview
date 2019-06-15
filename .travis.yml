@@ -3,9 +3,5 @@ python:
   - "3.6"
 install:
   - pip install -r requirements.txt
-addons:
-  sonarcloud:
-    organization: "sergiysobolev-github"
-    projectKey: "SergiySobolev_crackinginterview"
 script:
-  - pytest;sonar-scanner
+  - pytest
