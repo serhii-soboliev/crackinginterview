@@ -64,7 +64,15 @@ class RodCut:
             current_length -= s[current_length]
         return r[length],solution
 
-
-
-
-
+    def find_optimum_cut_bottom_up_with_first_piece_and_cust_cost(self, length=10, cost=1):
+        r = {0: 0}
+        s = {0: 0}
+        for j in range(1, length + 1):
+            q = self.prices[j]
+            s[j] = j
+            for i in range(1, j + 1):
+                if q < self.prices[i] + r[j - i] - cost:
+                    q = self.prices[i] + r[j - i] - cost
+                    s[j] = i
+            r[j] = q
+        return r, s
