@@ -4,5 +4,7 @@
 *.cache/
 .scannerwork/*
 *.log
+.coverage
+coverage.xml
 
 
