@@ -233,6 +233,3 @@ class TestRodCut(unittest.TestCase):
             10: 10
         }
         self.assertEqual(s, expected_s)
-
-
-
