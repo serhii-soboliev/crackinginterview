@@ -1,5 +1,5 @@
 import unittest
-import parameterized
+from parameterized import parameterized
 import numpy as np
 
 from dynamic.tasks.matrix_multiply import MatrixMultiply
@@ -24,6 +24,28 @@ class TestMatrixMultiply(unittest.TestCase):
         n = 3
         m = 7
         l = 9
-        a = np.random.rand(n,l)
-        b = np.random.rand(l,m)
-        np.testing.assert_array_almost_equal(np.dot(a, b), MatrixMultiply.simple_matrix_multiply(a, b))
+        a = np.random.rand(n, l)
+        b = np.random.rand(l, m)
+        np.testing.assert_array_almost_equal(
+            np.dot(a, b),
+            MatrixMultiply.simple_matrix_multiply(a, b)
+        )
+
+    @parameterized.expand([
+        ['1', [10, 100, 5, 50], 7500, ""],
+        ['2', [30, 35, 15, 5, 10, 20, 25], 15125, ""]
+    ])
+    def test_matrix_minimum_multiplications_recursion(self, name, dimensions, count, parens):
+        self.assertEqual(
+            MatrixMultiply.count_minimum_multiplications_recursion(dimensions),
+            count
+        )
+
+    @parameterized.expand([
+        ['1', [10, 100, 5, 50], 7500, "((A0A1)A2)"],
+        ['2', [30, 35, 15, 5, 10, 20, 25], 15125, "((A0(A1A2))((A3A4)A5))"]
+    ])
+    def test_matrix_minimum_multiplications(self, name, dimensions, expected_count, expected_parens):
+        count, parens = MatrixMultiply.count_minimum_multiplications(dimensions)
+        self.assertEqual(count, expected_count)
+        self.assertEqual(parens, expected_parens)
