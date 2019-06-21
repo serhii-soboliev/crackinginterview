@@ -43,7 +43,8 @@ class TestMatrixMultiply(unittest.TestCase):
 
     @parameterized.expand([
         ['1', [10, 100, 5, 50], 7500, "((A0A1)A2)"],
-        ['2', [30, 35, 15, 5, 10, 20, 25], 15125, "((A0(A1A2))((A3A4)A5))"]
+        ['2', [30, 35, 15, 5, 10, 20, 25], 15125, "((A0(A1A2))((A3A4)A5))"],
+        ['3', [5, 10, 3, 12, 5, 50, 6], 2010, "((A0A1)((A2A3)(A4A5)))"]
     ])
     def test_matrix_minimum_multiplications(self, name, dimensions, expected_count, expected_parens):
         count, parens = MatrixMultiply.count_minimum_multiplications(dimensions)
