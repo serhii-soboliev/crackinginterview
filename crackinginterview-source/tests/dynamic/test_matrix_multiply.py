@@ -32,10 +32,10 @@ class TestMatrixMultiply(unittest.TestCase):
         )
 
     @parameterized.expand([
-        ['1', [10, 100, 5, 50], 7500, ""],
-        ['2', [30, 35, 15, 5, 10, 20, 25], 15125, ""]
+        ['1', [10, 100, 5, 50], 7500],
+        ['2', [30, 35, 15, 5, 10, 20, 25], 15125]
     ])
-    def test_matrix_minimum_multiplications_recursion(self, name, dimensions, count, parens):
+    def test_matrix_minimum_multiplications_recursion(self, name, dimensions, count):
         self.assertEqual(
             MatrixMultiply.count_minimum_multiplications_recursion(dimensions),
             count
