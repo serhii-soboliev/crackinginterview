@@ -5,8 +5,7 @@ import sys
 
 class MatrixMultiply:
 
-    @staticmethod
-    def simple_matrix_multiply(a, b):
+    def simple_matrix_multiply(self, a, b):
         assert np.shape(a)[1] == np.shape(b)[0], 'Number of matrix A columns should be equal to number of matrix B rows'
         n = np.shape(a)[0]
         m = np.shape(b)[1]
@@ -18,31 +17,27 @@ class MatrixMultiply:
                     result[i][j] += a[i][k] * b[k][j]
         return result
 
-    @staticmethod
-    def count_minimum_multiplications_recursion(p):
-        return MatrixMultiply.calculate_minimum_multiplication_in_bounds(p, 1, len(p) - 1)
+    def count_minimum_multiplications_recursion(self, p):
+        return self.calculate_minimum_multiplication_in_bounds(p, 1, len(p) - 1)
 
-    @staticmethod
-    def count_minimum_multiplications(p):
-        m, s = MatrixMultiply.build_matrix_chain_order(p)
-        return m[0][len(p) - 2], MatrixMultiply.build_parens(s)
+    def count_minimum_multiplications(self,p):
+        m, s = self.build_matrix_chain_order(p)
+        return m[0][len(p) - 2], self.build_parens(s)
 
-    @staticmethod
-    def calculate_minimum_multiplication_in_bounds(p, i, j):
+    def calculate_minimum_multiplication_in_bounds(self, p, i, j):
         if i == j:
             return 0
         result = sys.maxsize
         for k in range(i, j):
-            prev_min = MatrixMultiply.calculate_minimum_multiplication_in_bounds(p, i, k)
-            follow_min = MatrixMultiply.calculate_minimum_multiplication_in_bounds(p, k+1, j)
+            prev_min = self.calculate_minimum_multiplication_in_bounds(p, i, k)
+            follow_min = self.calculate_minimum_multiplication_in_bounds(p, k+1, j)
             result = min(
                 result,
                 prev_min + follow_min + (p[i-1] * p[k] * p[j])
             )
         return result
 
-    @staticmethod
-    def build_matrix_chain_order(p):
+    def build_matrix_chain_order(self, p):
         n = len(p) - 1
         m = np.zeros([n, n])
         s = np.zeros([n-1, n])
@@ -57,22 +52,42 @@ class MatrixMultiply:
                         s[i,j] = k + 1
         return m, s
 
-    @staticmethod
-    def build_parens(s):
-        return MatrixMultiply.build_parens_in_bounds(s, 0, s.shape[0], "")
+    def build_parens(self, s):
+        return self.build_parens_in_bounds(s, 0, s.shape[0], "")
 
-    @staticmethod
-    def build_parens_in_bounds(s, i, j, res):
+    def build_parens_in_bounds(self, s, i, j, res):
         if i == j:
             return res + "A{}".format(i)
         else:
             k = int(s[i,j])
             return '({}{}{})'.format(
-                MatrixMultiply.build_parens_in_bounds(s, i, k-1, res),
+                self.build_parens_in_bounds(s, i, k-1, res),
                 res,
-                MatrixMultiply.build_parens_in_bounds(s, k, j,res)
+                self.build_parens_in_bounds(s, k, j,res)
             )
 
+    def matrix_chain_multiply(self, A):
+        p = self.build_matrix_dimensions(A)
+        m,s = self.build_matrix_chain_order(p)
+        res = self.matrix_chain_multiply_in_bounds(A, s, 0, len(A) - 1)
+        return res
+
+    def matrix_chain_multiply_in_bounds(self, A, s, i, j):
+        if i == j:
+            return A[i]
+        if i == j - 1:
+            return self.simple_matrix_multiply(A[i], A[j])
+        else:
+            k = int(s[i,j])
+            return self.simple_matrix_multiply(
+                self.matrix_chain_multiply_in_bounds(A, s, i, k-1),
+                self.matrix_chain_multiply_in_bounds(A, s, k, j)
+            )
+
+    def build_matrix_dimensions(self, A):
+        dimensions = list(map(lambda a: a.shape[0], A))
+        dimensions.append(A[len(A) - 1].shape[1])
+        return dimensions
 
 
 
