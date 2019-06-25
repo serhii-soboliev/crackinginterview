@@ -1,9 +1,7 @@
 import unittest
 from parameterized import parameterized
 import numpy as np
-
 from dynamic.tasks.matrix_multiply import MatrixMultiply
-
 
 class TestMatrixMultiply(unittest.TestCase):
 

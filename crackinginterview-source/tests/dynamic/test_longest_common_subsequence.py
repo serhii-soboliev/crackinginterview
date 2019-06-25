@@ -14,4 +14,12 @@ class TestLongestCommonSubsequence(unittest.TestCase):
         ['1', 'abcbdab', 'bdcaba', 'bcba']
     ])
     def test_find_longest_subsequence(self, n, s1, s2, r):
+        self.assertEqual(self.lcs.lcs_recursive(s1, s2), r)
+
+    @parameterized.expand([
+        ['1', 'abcbdab', 'bdcaba', 'bdab'],
+        ['2', 'abACCGGTCGAGTGCGCGGAAGCCGGCCGAA', 'GTCGTTCGGAATGCCGTTGCTCTGTAAA', 'GTCGTCGGAAGCCGGCCGAA']
+    ])
+    def test_find_longest_subsequence(self, n, s1, s2, r):
         self.assertEqual(self.lcs.lcs(s1, s2), r)
+
