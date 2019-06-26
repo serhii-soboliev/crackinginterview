@@ -5,11 +5,11 @@ import numpy as np
 
 class LongestCommonSubSequence:
 
-    def increasing_lcs(self, str):
+    def lis(self, s1):
         candidates = [""]
-        for i in range(len(str)):
+        for s in s1:
             prev_candidates = candidates
-            candidates = self.append_where_possible(prev_candidates, str[i])
+            candidates = self.append_where_possible(prev_candidates, s)
         return self.get_longest_strings(candidates)
 
     def append_where_possible(self, candidates, symbol):

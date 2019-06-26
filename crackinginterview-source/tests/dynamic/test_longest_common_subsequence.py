@@ -1,6 +1,6 @@
 import unittest
+
 from parameterized import parameterized
-import numpy as np
 
 from dynamic.tasks.longest_common_subsequence import LongestCommonSubSequence
 
@@ -45,4 +45,4 @@ class TestLongestCommonSubsequence(unittest.TestCase):
         ['4', 'wladbce', ['abce']],
     ])
     def test_increasing_lcs(self,n,s,r):
-        self.assertEqual(r, self.lcs.increasing_lcs(s))
+        self.assertEqual(r, self.lcs.lis(s))
