@@ -2,7 +2,35 @@ from os import stat_result
 
 import numpy as np
 
+
 class LongestCommonSubSequence:
+
+    def increasing_lcs(self, str):
+        candidates = [""]
+        for i in range(len(str)):
+            prev_candidates = candidates
+            candidates = self.append_where_possible(prev_candidates, str[i])
+        return self.get_longest_strings(candidates)
+
+    def append_where_possible(self, candidates, symbol):
+        res = []
+        is_added = False
+        max_added_len = 0
+        for candidate in candidates:
+            res.append(candidate)
+            if candidate[-1:] < symbol:
+                new_candidate = candidate + symbol
+                res.append(new_candidate)
+                is_added = True
+                max_added_len = max(len(new_candidate), max_added_len)
+        if is_added:
+            remove_candidates = list(filter(lambda s: len(s) < max_added_len and s[-1:] == symbol and s != "", candidates))
+            res = [c for c in res if c not in remove_candidates]
+        return res
+
+    def get_longest_strings(self, strings):
+        max_len =  max(len(s) for s in strings)
+        return [s for s in strings if len(s) == max_len]
 
     def lcs_recursive(self, s1, s2):
         if self.is_blank(s1) or self.is_blank(s2):

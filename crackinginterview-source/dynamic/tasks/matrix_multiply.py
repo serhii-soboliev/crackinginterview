@@ -2,7 +2,6 @@ import numpy as np
 import sys
 
 
-
 class MatrixMultiply:
 
     def simple_matrix_multiply(self, a, b):

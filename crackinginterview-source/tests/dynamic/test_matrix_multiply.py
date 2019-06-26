@@ -3,6 +3,7 @@ from parameterized import parameterized
 import numpy as np
 from dynamic.tasks.matrix_multiply import MatrixMultiply
 
+
 class TestMatrixMultiply(unittest.TestCase):
 
     def setUp(self):
@@ -20,7 +21,6 @@ class TestMatrixMultiply(unittest.TestCase):
         self.assertRaisesRegexp(AssertionError,
                                 'Number of matrix A columns should be equal to number of matrix B rows',
                                 self.mm.simple_matrix_multiply, a, b)
-
 
     def test_simple_matrix_multiply_random(self):
         n = 3
