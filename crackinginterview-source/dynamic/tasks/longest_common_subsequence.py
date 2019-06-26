@@ -12,9 +12,7 @@ class LongestCommonSubSequence:
         if s1[l1] == s2[l2]:
             return self.lcs_recursive(s1[:-1], s2[:-1]) + s1[l1]
         else:
-            c1 = self.lcs_recursive(s1, s2[:-1])
-            c2 = self.lcs_recursive(s1[:-1], s2)
-            return c1 if len(c1) > len(c2) else c2
+            return max(self.lcs_recursive(s1, s2[:-1]), self.lcs_recursive(s1[:-1], s2), key=len)
 
     def lcs(self, s1, s2):
         m = len(s1)
@@ -25,8 +23,33 @@ class LongestCommonSubSequence:
                 if s1[i-1] == s2[j-1]:
                     lcs[i][j] = lcs[i-1][j-1] + s1[i-1]
                 else:
-                    lcs[i][j] = lcs[i-1][j] if len(lcs[i-1][j]) > len(lcs[i][j-1]) else lcs[i][j-1]
+                    lcs[i][j] = max(lcs[i-1][j], lcs[i][j-1], key=len)
         return lcs[m][n]
+
+    def lcs_dict(self, s1, s2):
+        s1_substrings = self.get_substrings(s1)
+        s2_substrings = self.get_substrings(s2)
+        lcs = {("",""):""}
+        for sub1 in s1_substrings:
+            lcs[(sub1, "")] = ""
+        for sub2 in s2_substrings:
+            lcs[("", sub2)] = ""
+        for sub1 in s1_substrings:
+            for sub2 in s2_substrings:
+                if self.last_symbols_the_same(sub1, sub2):
+                    lcs[(sub1, sub2)] = lcs[(sub1[:-1], sub2[:-1])] + sub1[-1:]
+                else:
+                    lcs[(sub1, sub2)] = max(lcs[(sub1[:-1], sub2)], lcs[(sub1, sub2[:-1])], key=len)
+        return lcs[(s1, s2)]
+
+    def last_symbols_the_same(self, s1, s2):
+        return s1[-1:] == s2[-1:]
+
+    def get_substrings(self, s):
+        r = []
+        for i in range(1, len(s)+1):
+            r.append(s[:i])
+        return r
 
     def is_blank(self, s):
         return not (s and s.strip())
