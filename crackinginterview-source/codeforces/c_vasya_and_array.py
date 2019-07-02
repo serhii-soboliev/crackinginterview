@@ -11,28 +11,25 @@ def solve():
         else:
             unsorted_bounds.append([int(l), int(r)])
 
-    for i in range(len(unsorted_bounds)):
-        for j in range(len(sorted_bounds)):
-            if is_inside(unsorted_bounds[i], sorted_bounds[i]):
-                print("NO")
-                quit()
+    r = [0]*(n-1)
 
-    print('YES')
-    r = [0]*n
-    for b in unsorted_bounds:
-        for i in range(b[0]-1, b[1]):
-            r[i] = b[1] + b[0] - i
-
+    for b in sorted_bounds:
+        r[b[0]-1:b[1]-1] = [1]*(b[1] - b[0])
 
     a = [0]*n
-    for b in sorted_bounds:
-        a[b[0]-1:b[1]] = [1]*(b[1] - b[0] + 1)
+    current = n
+    a[0] = current
+    for i in range(n - 1):
+        if r[i] == 0:
+            current -= 1
+        a[i + 1] = current
 
-    c = [0]
-    print(",".join(map(str,r)))
-    print(",".join(map(str,a)))
+    for b in unsorted_bounds:
+        if a[b[0]-1] == a[b[1]-1]:
+            print("NO")
+            quit()
 
-def is_inside(f, s):
-    return f[0] <= s[0] and s[1] <= f[1]
+    print('YES')
+    print(" ".join(map(str, a)))
 
 solve()
