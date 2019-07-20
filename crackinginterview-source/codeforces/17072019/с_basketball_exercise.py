@@ -1,44 +1,22 @@
+def calc_max_height_team(n, t1, t2):
+    mht = [[0 for i in range(n)] for j in range(3)]
+    if n == 1:
+        return max(t1[0], t2[0])
+    mht[0][0] = t1[0]
+    mht[1][0] = t2[0]
+    mht[2][0] = 0
+    for i in range(1, n):
+        mht[0][i] = max(mht[1][i - 1] + t1[i], mht[2][i - 1] + t1[i])
+        mht[1][i] = max(mht[0][i - 1] + t2[i], mht[2][i - 1] + t2[i])
+        mht[2][i] = max(mht[0][i - 1], mht[1][i - 1])
+    return max(mht[0][n - 1], mht[1][n - 1])
+
+
 def solve():
     n = int(input())
     f_t = list(map(lambda x: int(x), input().split()))
     s_t = list(map(lambda x: int(x), input().split()))
-
-    max_team = [0] * (n + 1)
-    added_players = []
-
-    for i in range(n):
-        if i == 0:
-            if f_t[0] > s_t[0]:
-                max_team[0] = s_t[0]
-                max_team[1] = f_t[0]
-                added_players.append('s')
-                added_players.append('f')
-            else:
-                max_team[0] = f_t[0]
-                max_team[1] = s_t[0]
-                added_players.append('f')
-                added_players.append('s')
-
-        else:
-            if added_players[i] == 'f':
-                f_sum = max_team[i] + s_t[i]
-                s_sum = max_team[i-1] + f_t[i]
-                if f_sum > s_sum:
-                    max_team[i+1] = f_sum
-                    added_players.append('l')
-                else:
-                    max_team[i + 1] = s_sum
-                    added_players.append('f')
-            else:
-                f_sum = max_team[i] + f_t[i]
-                s_sum = max_team[i - 1] + s_t[i]
-                if f_sum > s_sum:
-                    max_team[i + 1] = f_sum
-                    added_players.append('f')
-                else:
-                    max_team[i + 1] = s_sum
-                    added_players.append('l')
-    print(max_team[n])
+    print(int(calc_max_height_team(n, f_t, s_t)))
 
 
 solve()

@@ -1,9 +1,7 @@
-import numpy as np
-
 class BasketballExercise:
 
     def calc_max_height_team(self, n, t1, t2):
-        mht = np.zeros([3,n])
+        mht = [[0 for i in range(n)] for j in range(3)]
         if n == 1:
             return max(t1[0], t2[0])
         mht[0][0] = t1[0]
