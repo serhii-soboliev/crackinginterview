@@ -18,7 +18,7 @@ class TestMatrixMultiply(unittest.TestCase):
             [1, 2],
             [1, 2]
         ]
-        self.assertRaisesRegexp(AssertionError,
+        self.assertRaisesRegex(AssertionError,
                                 'Number of matrix A columns should be equal to number of matrix B rows',
                                 self.mm.simple_matrix_multiply, a, b)
 
