@@ -31,4 +31,6 @@ def solve():
         print(great_fence_cost(n, a, b))
 
 
-solve()
+if __name__ == '__main__':
+    solve()
+

@@ -12,26 +12,30 @@ def helper(h1, h2, h3, a, b, c, h):
     return mini
 
 
+def great_fence_cost(n, h, p):
+    a = 0
+    b = p[0]
+    c = p[0] * 2
+    for i in range(1, n):
+        a_new = helper(h[i - 1], h[i - 1] + 1, h[i - 1] + 2, a, b, c, h[i]) + 0
+        b_new = helper(h[i - 1], h[i - 1] + 1, h[i - 1] + 2, a, b, c, h[i] + 1) + p[i] * 1
+        c_new = helper(h[i - 1], h[i - 1] + 1, h[i - 1] + 2, a, b, c, h[i] + 2) + p[i] * 2
+        a = a_new
+        b = b_new
+        c = c_new
+    return min(a, b, c)
+
+
 def solve():
     query_number = int(input())
     for k in range(query_number):
         n = int(input())
-        h = [0]*n
-        p = [0]*n
+        h = [0] * n
+        p = [0] * n
         for j in range(n):
             h[j], p[j] = list(map(int, input().split(" ")))
+        print(great_fence_cost(n, h, p))
 
-        a = 0
-        b = p[0]
-        c = p[0] * 2
 
-        for i in range(1,n):
-            a_new = helper(h[i - 1], h[i - 1] + 1, h[i - 1] + 2, a, b, c, h[i]) + 0
-            b_new = helper(h[i - 1], h[i - 1] + 1, h[i - 1] + 2, a, b, c, h[i] + 1) + p[i] * 1
-            c_new = helper(h[i - 1], h[i - 1] + 1, h[i - 1] + 2, a, b, c, h[i] + 2) + p[i] * 2
-            a = a_new
-            b = b_new
-            c = c_new
-        print(min(a,b,c))
-
-solve()
+if __name__ == '__main__':
+    solve()
