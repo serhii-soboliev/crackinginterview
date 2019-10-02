@@ -1,5 +1,4 @@
 # https://codeforces.com/problemset/problem/1221/D
-import sys
 
 
 def great_fence_cost(n, a, b):
