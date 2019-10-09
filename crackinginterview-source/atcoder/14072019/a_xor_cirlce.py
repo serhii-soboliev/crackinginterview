@@ -9,4 +9,5 @@ def solve():
     answer = "Yes" if res == 0 else "No"
     print(answer)
 
+
 solve()
