@@ -15,3 +15,10 @@ class TestOptimalBinaryTree(unittest.TestCase):
     def test_find_recursive(self, name, p, q, expected_cost):
         recursive = self.obt.find_recursive(p, q)
         self.assertEqual(recursive, expected_cost)
+
+    @parameterized.expand([
+        ['1', [0, 0.15, 0.1, 0.05, 0.1, 0.2], [0.05, 0.1, 0.05, 0.05, 0.05, 0.1], 2.75]
+    ])
+    def test_find_optimal(self, name, p, q, expected_cost):
+        recursive = self.obt.find_optimal(p, q)
+        self.assertEqual(recursive, expected_cost)
