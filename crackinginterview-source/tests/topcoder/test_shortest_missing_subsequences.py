@@ -18,7 +18,7 @@ class TestShortestMissingSubsequences(unittest.TestCase):
     @unittest.skip("Not implemented yet")
     def test_build(self, name, g, n, a, expected):
         self.assertCountEqual(
-            self.sms.build(g,n,a),
+            self.sms.build(g, n, a),
             expected
         )
 
