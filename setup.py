@@ -6,5 +6,5 @@ setup(
    description='Preparing to interview',
    author='Serhii Soboliev',
    author_email='sergiy.sobolev@gmail.com',
-   packages=['crackinginterview'],  #same as name
+   packages=['crackinginterview'],
 )
