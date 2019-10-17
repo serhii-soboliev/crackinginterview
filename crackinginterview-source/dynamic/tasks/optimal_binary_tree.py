@@ -32,7 +32,7 @@ class OptimalBinaryTree:
         n = len(p)
         e = [[0 for i in range(n)] for j in range(n+1)]
         w = [[0 for i in range(n)] for j in range(n+1)]
-        root = [[0 for i in range(n+1)] for j in range(n+1)]
+        root = [[0 for i in range(n-1)] for j in range(n-1)]
         for i in range(n):
             q_cur = q[i]
             e[i+1][i] = q_cur
@@ -48,6 +48,29 @@ class OptimalBinaryTree:
                     t = e[i][r-1] + e[r+1][j] + w[i][j]
                     if t < e[i][j]:
                         e[i][j] = t
-                        root[i][j] = r
+                        root[i-1][j-1] = r
         return e, root
 
+    def build_tree_trace_from_root(self, roots):
+        left = 0
+        right = len(roots[0]) - 1
+        root_element = roots[left][right]
+        tree_trace = ["k%s is the root" % root_element]
+        self.build_obt_from_roots_between_indexes(roots, left, root_element-2, root_element, "left", tree_trace)
+        self.build_obt_from_roots_between_indexes(roots, root_element, right, root_element, "right", tree_trace)
+        return tree_trace
+
+    def build_obt_from_roots_between_indexes(self, roots, left, right, p_root, child_side, tree_trace):
+        n = len(roots[0])
+        if left < 0 or right < 0 or left > n-1 or right > n-1:
+            d_num = p_root if child_side == "right" else p_root - 1
+            tree_trace.append("d%s is %s child of k%s" % (d_num, child_side, p_root))
+            return
+        cur_root = roots[left][right]
+        if cur_root == p_root or cur_root == 0:
+            d_num = p_root if child_side == "right" else p_root - 1
+            tree_trace.append("d%s is %s child of k%s" % (d_num, child_side, p_root))
+            return
+        tree_trace.append("k%s is %s child of k%s" % (cur_root, child_side, p_root))
+        self.build_obt_from_roots_between_indexes(roots, left, cur_root - 2, cur_root, "left", tree_trace)
+        self.build_obt_from_roots_between_indexes(roots, cur_root, right, cur_root, "right", tree_trace)
