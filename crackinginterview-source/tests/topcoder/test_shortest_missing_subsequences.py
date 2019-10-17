@@ -15,6 +15,7 @@ class TestShortestMissingSubsequences(unittest.TestCase):
         ['2', 5, 4,  [1, 0, 0, 1],                   [[2], [3], [4]]],
         ['3', 3, 10, [1, 2, 0, 0, 1, 2, 1, 2, 2, 2], [[0, 0, 0], [0, 1, 0], [0, 2, 0], [1, 1, 0], [2, 1, 0],  [2, 2, 0]]]
     ])
+    @unittest.skip("Not implemented yet")
     def test_build(self, name, g, n, a, expected):
         self.assertCountEqual(
             self.sms.build(g,n,a),
@@ -28,6 +29,7 @@ class TestShortestMissingSubsequences(unittest.TestCase):
         ['4', 7, 7,  [0, 1, 2, 3, 4, 5, 6], [2, 28]],
         ['5', 7, 14, [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6], [2, 21]]
     ])
+    @unittest.skip("Not implemented yet")
     def test_count(self, name, g, n, a, expected):
         self.assertCountEqual(
             self.sms.count(g, n, a),
