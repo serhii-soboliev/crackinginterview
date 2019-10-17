@@ -20,5 +20,14 @@ class Graph:
             in_v = self.find_in_vertices(v_to)
             return 1 + max(map(lambda x: self.find_longest_acyclic_path_recursive(v_from, x), in_v))
 
+    def find_longest_acyclic_path_optimal(self, v_from, v_to):
+        assert v_from in self.v
+        assert v_to in self.v
+        paths = self.build_paths()
+        return paths[v_from][v_to]
+
     def find_in_vertices(self, v):
         return list(map(lambda x: x[0],  filter(lambda y: y[1] == v, self.e)))
+
+    def build_paths(self):
+        pass
