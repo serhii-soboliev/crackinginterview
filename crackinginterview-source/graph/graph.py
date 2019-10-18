@@ -30,4 +30,36 @@ class Graph:
         return list(map(lambda x: x[0],  filter(lambda y: y[1] == v, self.e)))
 
     def build_paths(self):
-        pass
+        n = len(self.v) + 1
+        paths = [[-1 for i in range(n)] for j in range(n)]
+        for i in range(n):
+            paths[i][i] = 0
+        for [i,j] in self.e:
+            paths[i][j] = 1
+        tgt_to_src = self.build_tgt_to_src_dict()
+        tgt = set(map(lambda x: x[0], self.e))
+
+        while len(tgt) > 0:
+            cur_tgt = []
+            for t in tgt:
+                if t in tgt_to_src:
+                    sources = tgt_to_src[t]
+                    cur_tgt += sources
+                    for src in sources:
+                        for i in range(1, n):
+                            if paths[t][i] > -1:
+                                paths[src][i] = paths[t][i] + 1
+            tgt = set(cur_tgt)
+        return paths
+
+    def find_all_targets(self):
+        return set(map(lambda x: x[1], self.e))
+
+    def build_tgt_to_src_dict(self):
+        src_dict = {}
+        for [i, j] in self.e:
+            if j in src_dict:
+                src_dict[j].append(i)
+            else:
+                src_dict[j] = [i]
+        return src_dict
