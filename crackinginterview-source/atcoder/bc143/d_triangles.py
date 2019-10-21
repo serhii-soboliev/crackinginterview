@@ -13,7 +13,7 @@ def find_triangle_count(d):
 
 
 def solve():
-    m = int(input())
+    input()
     input_list = list(map(lambda x: int(x), input().split()))
     print(find_triangle_count(input_list))
 
