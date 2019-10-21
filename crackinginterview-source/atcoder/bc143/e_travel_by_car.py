@@ -1,38 +1,31 @@
-import numpy as np
-from scipy.sparse.csgraph import floyd_warshall
 import sys
 
-input = sys.stdin.readline
+from scipy.sparse.csgraph import floyd_warshall
+import numpy as np
 
 
 def solve():
-    INF = float("Inf")
-    n, m, l = map(int, input().split())
-    G = [[INF] * n for i in range(n)]
+    infinity = 10 ** 10
+    n, m, le = map(int, input().split())
+    paths = np.full((n, n), infinity)
     for i in range(n):
-        G[i][i] = 0
-    for i in range(m):
+        paths[i, i] = 0
+
+    for _ in range(m):
         a, b, c = map(int, input().split())
-        a, b = a - 1, b - 1
-        if c <= l:
-            G[a][b] = G[b][a] = c
-    G = floyd_warshall(G, directed=False)
-    G = np.where(G <= l, 1, INF)
-    for i in range(n):
-        G[i][i] = 0
-    GG = floyd_warshall(G, directed=False)
+        paths[a - 1, b - 1] = paths[b - 1, a - 1] = c
+
+    paths = floyd_warshall(paths)
+    paths = floyd_warshall(paths <= le)
+    paths[np.isinf(paths)] = 0
 
     q = int(input())
-    ans = []
-    for i in range(q):
+    answer = []
+    for _ in range(q):
         s, t = map(int, input().split())
-        a = GG[s - 1][t - 1]
-        if a == INF:
-            a = 0
-        else:
-            a = int(a)
-        ans.append(a - 1)
-    print(*ans, sep="\n")
+        answer.append(int(paths[s - 1][t - 1] - 1))
+
+    print("\n".join(map(str, answer)))
 
 
 if __name__ == "__main__":
