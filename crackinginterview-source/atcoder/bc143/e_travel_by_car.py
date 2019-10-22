@@ -1,5 +1,3 @@
-import sys
-
 from scipy.sparse.csgraph import floyd_warshall
 import numpy as np
 
