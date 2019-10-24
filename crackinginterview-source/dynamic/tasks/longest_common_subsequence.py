@@ -1,8 +1,3 @@
-from os import stat_result
-
-import numpy as np
-
-
 class LongestCommonSubSequence:
 
     def lis(self, s1):

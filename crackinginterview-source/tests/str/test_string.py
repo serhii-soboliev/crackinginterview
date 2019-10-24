@@ -8,12 +8,14 @@ from str.string import String
 class TestString(unittest.TestCase):
 
     @parameterized.expand([
-        ['character', "character", "carac"],
-        ['civicw', "civicw", "civic"],
+        ['carac', "character", "carac"],
+        ['civic', "civicw", "civic"],
+        ['BABCBAB', "BBABCBCAB", "BABCBAB"],
+        ['sullus', "wswwuiollust", "sullus"],
     ])
-    @unittest.skip("Not implemented yet")
     def test_find_longest_palindrome_subsequence(self, name, in_str, expected):
         self.assertEqual(
             expected,
             String(in_str).find_longest_palindrome_subsequence(),
-            "Failed to find longest palindrome subsequence for" + name)
+            "Longest palindrome subsequence for {} should be {} ".format(in_str, expected)
+        )
