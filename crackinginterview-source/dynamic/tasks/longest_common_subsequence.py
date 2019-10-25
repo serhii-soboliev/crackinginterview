@@ -52,7 +52,7 @@ class LongestCommonSubSequence:
     def lcs_dict(self, s1, s2):
         s1_substrings = self.get_substrings(s1)
         s2_substrings = self.get_substrings(s2)
-        lcs = {("",""):""}
+        lcs = {("", ""): ""}
         for sub1 in s1_substrings:
             lcs[(sub1, "")] = ""
         for sub2 in s2_substrings:
