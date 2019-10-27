@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from atcoder.bc143.d_triangles import find_triangle_count
+from algo.atcoder.bc143.d_triangles import find_triangle_count
 
 
 class TestDTriangles(unittest.TestCase):
