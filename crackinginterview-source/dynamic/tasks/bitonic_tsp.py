@@ -41,11 +41,8 @@ def find_bitonic_tsp(p):
             k = 1 - k
     s[0].append(0)
     s[0].reverse()
-    s[1].reverse()
 
-    while s[1]:
-        s[0].append(s[1].pop())
-    return s[0]
+    return s
 
 
 
