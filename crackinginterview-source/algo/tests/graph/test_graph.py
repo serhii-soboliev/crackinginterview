@@ -1,7 +1,7 @@
 import unittest
 from parameterized import parameterized
 
-from algo.graph.graph import Graph
+from algo.graph import Graph
 
 
 class TestGraph(unittest.TestCase):

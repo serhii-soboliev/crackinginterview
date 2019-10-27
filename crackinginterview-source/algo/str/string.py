@@ -1,5 +1,5 @@
 from algo.dynamic.tasks.longest_common_subsequence import LongestCommonSubSequence
-from algo.utils.constants import EMPTY
+from algo.utils import EMPTY
 
 
 class String:

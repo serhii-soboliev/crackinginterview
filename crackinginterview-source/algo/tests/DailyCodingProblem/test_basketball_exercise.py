@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.dynamic.tasks.basketball_exercise import BasketballExercise
+from algo.dynamic import BasketballExercise
 
 
 class TestBasketballExercise(unittest.TestCase):
