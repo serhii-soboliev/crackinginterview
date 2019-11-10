@@ -8,6 +8,7 @@ def trivial_platform(n, m, c):
     return True, res
 
 
+# todo fix
 def jump_program(n, m, d, c):
     res = [0]*n
     if n < d:

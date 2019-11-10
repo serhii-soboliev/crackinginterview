@@ -1,6 +1,6 @@
 import unittest
-from parameterized import parameterized
 
+from parameterized import parameterized
 
 from algo.codeforces.cr.n598.с_platform_jump import jump_program
 
@@ -9,7 +9,7 @@ class TestPlatformJump(unittest.TestCase):
 
     @parameterized.expand([
         ['1', 7, 3, 2, [1, 2, 1], [0, 1, 0, 2, 2, 0, 3]],
-        ['2', 10, 1, 11, [1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1]]
+        ['2', 10, 1, 11, [1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
     ])
     def test_platform_jump(self, name, n, m, d, c, expected):
         self.assertEqual(
