@@ -3,6 +3,7 @@ import unittest
 from parameterized import parameterized
 
 from algo.leetcode.tasks.dfs_130_surrounded_regions import SurroundedRegions
+from algo.leetcode.tasks.dfs_130_surrounded_regions import SurroundedRegions1
 from algo.leetcode.tasks.dfs_130_surrounded_regions import SurroundedRegions2
 
 
@@ -88,6 +89,7 @@ class TestSurroundedRegions(unittest.TestCase):
     ])
     def test_surrounded_regions(self, name, grid, expected):
         SurroundedRegions().solve(grid)
+        SurroundedRegions1().solve(grid)
         SurroundedRegions2().solve(grid)
         self.assertEqual(grid, expected)
 
