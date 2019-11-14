@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.contest.wc163.wc162_1252_cell_with_odd_values import CellWithOddValues
+from algo.leetcode.contest.wc162.wc162_1252_cell_with_odd_values import CellWithOddValues
 
 
 class TestCellWithOddValue(unittest.TestCase):

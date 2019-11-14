@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.contest.wc163.wc162_1254_number_of_closed_islands import NumberOfClosedIslands
+from algo.leetcode.contest.wc162.wc162_1254_number_of_closed_islands import NumberOfClosedIslands
 
 
 class TestMaxAreaOfIsland(unittest.TestCase):
