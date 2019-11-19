@@ -15,5 +15,11 @@ class TestCoinChange(unittest.TestCase):
         self.assertEqual(
             expected,
             CoinChange().coin_change(coins, amount),
-            msg="On Test#{} result must be {}".format(name, expected)
+            msg="On Test #{} result must be {}".format(name, expected)
+        )
+
+        self.assertEqual(
+            expected,
+            CoinChange().coin_change_bfs(coins, amount),
+            msg="On BFS Test#{} result must be {}".format(name, expected)
         )
