@@ -1,22 +1,33 @@
+import numpy as np
+
+
 def all_you_can_eat(n, t, a, b):
-    dp = [[0 for _ in range(2)] for _ in range(t)]
-    for x in range(n):
-        for i in reversed(range(t)):
-            if i + a[x] < t:
-                dp[i + a[x]][0] = max(dp[i + a[x]][0], dp[i][0] + b[x])
-                dp[i + a[x]][1] = max(dp[i + a[x]][1], dp[i][1] + b[x])
-            dp[i][1] = max(dp[i][1], dp[i][0] + b[x])
-    return dp[t-1][1]
+    a = np.array(a, np.int)
+    b = np.array(b, np.int)
+
+    idx = np.argsort(a)
+    a = a[idx]
+    b = b[idx]
+
+    dp = np.zeros((n, t), np.int)
+
+    for i in range(n - 1):
+        dp[i + 1, :a[i]] = dp[i, :a[i]]
+        dp[i + 1, a[i]:] = np.maximum(dp[i, a[i]:], dp[i, :-a[i]] + b[i])
+
+    return np.max(dp[:, -1] + b)
 
 
 def solve():
     n, t = map(int, input().split())
     a = []
     b = []
-    for i in range(n):
-        a[i], b[i] = map(int, input().split())
+    for _ in range(n):
+        a_temp, b_temp = map(int, input().split())
+        a.append(a_temp)
+        b.append(b_temp)
 
-    print(all_you_can_eat(n, t, a, b))
+    print(all_you_can_eat(n,t,a,b))
 
 
 if __name__ == "__main__":
