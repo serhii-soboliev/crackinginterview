@@ -3,9 +3,6 @@ import unittest
 from parameterized import parameterized
 
 from algo.leetcode.tasks.bfs_695_max_area_of_island import MaxAreaOfIsland
-from algo.leetcode.tasks.dfs_130_surrounded_regions import SurroundedRegions
-from algo.leetcode.tasks.dfs_130_surrounded_regions import SurroundedRegions1
-from algo.leetcode.tasks.dfs_130_surrounded_regions import SurroundedRegions2
 
 
 class TestMaxAreaOfIsland(unittest.TestCase):
