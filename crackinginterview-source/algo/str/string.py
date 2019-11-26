@@ -33,8 +33,23 @@ class String:
                     p[i][j] = max(p[i+1][j], p[i][j-1], key=len)
         return p
 
+    def is_subsequence(self, s: str, t: str) -> bool:
+        if not s:
+            return True
+        n = len(s)
+        cur_s_index = 0
+        cur_letter = s[0]
+        for letter in t:
+            if cur_letter == letter:
+                cur_s_index += 1
+                if cur_s_index == n:
+                    return True
+                cur_letter = s[cur_s_index]
+        return False
+
     def __str__(self) -> str:
         return self._in_str
 
     def reverse(self) -> str:
         return ''.join(reversed(self._in_str))
+

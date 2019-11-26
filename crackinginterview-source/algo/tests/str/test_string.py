@@ -33,3 +33,12 @@ class TestString(unittest.TestCase):
             "Longest palindrome subsequence for {} should be {} ".format(in_str, expected)
         )
 
+    @parameterized.expand([
+        ['1', "abc", "ahbgdc", True],
+        ['2', "axc", "ahbgdc", False],
+        ['3', "", "ahbgdc", True]
+    ])
+    def test_is_subsequence(self, name, s, t, expected):
+        self.assertEqual(expected,
+                         String("").is_subsequence(s, t),
+                         "Test #{}.{} is substring for {}".format(name, s, t) if expected else "{} is substring for {}".format(name, s, t))
