@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.tasks.dp_1025_divisor_game import DivisorGame
+from leetcode.tasks.dp_1025_divisor_game import DivisorGame
 
 
 class TestDivisorGame(unittest.TestCase):

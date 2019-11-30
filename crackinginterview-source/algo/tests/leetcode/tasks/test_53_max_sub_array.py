@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.tasks.dp_53_max_subarray import MaxSubArray
+from leetcode.tasks.dp_53_max_subarray import MaxSubArray
 
 
 class TestMaxSubArray(unittest.TestCase):

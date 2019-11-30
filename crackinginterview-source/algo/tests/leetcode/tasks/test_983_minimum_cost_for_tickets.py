@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.tasks.dp_983_minimum_cost_for_tickets import MinimumCostForTickets
+from leetcode.tasks.dp_983_minimum_cost_for_tickets import MinimumCostForTickets
 
 
 class TestMinimumCostForTickets(unittest.TestCase):

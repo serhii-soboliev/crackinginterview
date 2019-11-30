@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.tasks.dfs_200_number_of_islands import NumberOfIslands
+from leetcode.tasks.dfs_200_number_of_islands import NumberOfIslands
 
 
 class TestNumberOfIslands(unittest.TestCase):

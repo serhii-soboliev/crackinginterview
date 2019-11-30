@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.tasks.dp_121_best_time_to_buy_and_sell_stock import BestTimeToBuyAndSellStock
+from leetcode.tasks.dp_121_best_time_to_buy_and_sell_stock import BestTimeToBuyAndSellStock
 
 
 class TestBestTimeToBuyAndSellStock(unittest.TestCase):

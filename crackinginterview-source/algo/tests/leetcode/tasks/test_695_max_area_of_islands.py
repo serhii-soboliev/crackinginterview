@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.tasks.bfs_695_max_area_of_island import MaxAreaOfIsland
+from leetcode.tasks.bfs_695_max_area_of_island import MaxAreaOfIsland
 
 
 class TestMaxAreaOfIsland(unittest.TestCase):

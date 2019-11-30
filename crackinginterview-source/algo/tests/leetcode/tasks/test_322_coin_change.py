@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.tasks.dp_322_coin_change import CoinChange
+from leetcode.tasks.dp_322_coin_change import CoinChange
 
 
 class TestCoinChange(unittest.TestCase):

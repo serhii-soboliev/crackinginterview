@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.dynamic.tasks.bitonic_tsp import find_bitonic_tsp
+from dynamic.tasks.bitonic_tsp import find_bitonic_tsp
 
 
 class TestTravelingSalesmanProblem(unittest.TestCase):

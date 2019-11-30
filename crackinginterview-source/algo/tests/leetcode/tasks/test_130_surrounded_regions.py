@@ -2,9 +2,9 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.tasks.dfs_130_surrounded_regions import SurroundedRegions
-from algo.leetcode.tasks.dfs_130_surrounded_regions import SurroundedRegions1
-from algo.leetcode.tasks.dfs_130_surrounded_regions import SurroundedRegions2
+from leetcode.tasks.dfs_130_surrounded_regions import SurroundedRegions
+from leetcode.tasks.dfs_130_surrounded_regions import SurroundedRegions1
+from leetcode.tasks.dfs_130_surrounded_regions import SurroundedRegions2
 
 
 class TestSurroundedRegions(unittest.TestCase):

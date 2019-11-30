@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.codeforces.cr.n597.a_good_old_numbers_coloring import is_finite
+from codeforces.cr.n597.a_good_old_numbers_coloring import is_finite
 
 
 class TestGoodOldNumbersColoring(unittest.TestCase):
