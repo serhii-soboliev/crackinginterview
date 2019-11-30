@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.contest.wc162.wc162_1253_recontruct_matrix import ReconstructMatrix
+from leetcode.contest.wc162.wc162_1253_recontruct_matrix import ReconstructMatrix
 
 
 class TestReconstruct2DMatrix(unittest.TestCase):

@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.topcoder.shortest_missing_subsequences import ShortestMissingSubsequences
+from topcoder.shortest_missing_subsequences import ShortestMissingSubsequences
 
 
 class TestShortestMissingSubsequences(unittest.TestCase):

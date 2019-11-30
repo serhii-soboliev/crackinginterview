@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.contest.wc164.wc164_5274_number_of_ways_to_stay_at_same_place import NumberOfWaysToStayAtSamePlace
+from leetcode.contest.wc164.wc164_5274_number_of_ways_to_stay_at_same_place import NumberOfWaysToStayAtSamePlace
 
 
 class TestNumberOfWaysToStayAtSamePlace(unittest.TestCase):

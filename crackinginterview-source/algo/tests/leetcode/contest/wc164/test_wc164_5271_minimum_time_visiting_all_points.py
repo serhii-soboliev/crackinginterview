@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.contest.wc164.wc164_5271_minimum_time_visiting_all_points import MinTimeToVisitAllPoints
+from leetcode.contest.wc164.wc164_5271_minimum_time_visiting_all_points import MinTimeToVisitAllPoints
 
 
 class TestMinTimeToVisitAllPoints(unittest.TestCase):

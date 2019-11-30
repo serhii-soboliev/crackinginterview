@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.dynamic.tasks.fibonacci_number import FibonacciNumber
+from dynamic.tasks.fibonacci_number import FibonacciNumber
 
 
 class TestFibonacciNumber(unittest.TestCase):

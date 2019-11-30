@@ -1,6 +1,6 @@
 import math
 
-from algo.utils.constants import SPACE, LINE_WRAP
+from utils.constants import SPACE, LINE_WRAP
 
 
 def justify_text(words, max_line_symbols):

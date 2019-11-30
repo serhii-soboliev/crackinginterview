@@ -1,7 +1,7 @@
 import unittest
 from parameterized import parameterized
 
-from algo.codeforces.cr.n598.d_binary_string_minimizing import minimize_binary
+from codeforces.cr.n598.d_binary_string_minimizing import minimize_binary
 
 
 class TestMinimizeBinary(unittest.TestCase):

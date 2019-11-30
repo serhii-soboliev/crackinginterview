@@ -1,8 +1,8 @@
 import unittest
 from parameterized import parameterized
-from algo.codeforces.ecr73.d_make_fence_great_again.d_make_fence_great_againV3 import great_fence_cost as great_fence_cost_v3
-from algo.codeforces.ecr73.d_make_fence_great_again.d_make_fence_great_againV2 import great_fence_cost as great_fence_cost_v2
-from algo.codeforces.ecr73.d_make_fence_great_again.d_make_fence_great_againV1 import great_fence_cost as great_fence_cost_v1
+from codeforces.ecr73.d_make_fence_great_again.d_make_fence_great_againV3 import great_fence_cost as great_fence_cost_v3
+from codeforces.ecr73.d_make_fence_great_again.d_make_fence_great_againV2 import great_fence_cost as great_fence_cost_v2
+from codeforces.ecr73.d_make_fence_great_again.d_make_fence_great_againV1 import great_fence_cost as great_fence_cost_v1
 
 
 class TestMakeFenceGreatAgain(unittest.TestCase):

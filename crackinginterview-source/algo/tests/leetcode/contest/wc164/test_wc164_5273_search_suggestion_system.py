@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.contest.wc164.wc164_5273_search_suggestion_system import SearchSuggestionSystem
+from leetcode.contest.wc164.wc164_5273_search_suggestion_system import SearchSuggestionSystem
 
 
 class TestSearchSuggestionSystem(unittest.TestCase):

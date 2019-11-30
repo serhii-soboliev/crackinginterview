@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.tasks.dp_746_min_cost_climbing_stairs import MinCostClimbingStairs
+from leetcode.tasks.dp_746_min_cost_climbing_stairs import MinCostClimbingStairs
 
 
 class TestMinCostClimbingStairs(unittest.TestCase):

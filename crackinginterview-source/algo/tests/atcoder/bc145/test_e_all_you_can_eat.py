@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.atcoder.bc145.e_all_you_can_eat import all_you_can_eat
+from atcoder.bc145.e_all_you_can_eat import all_you_can_eat
 
 
 class TestAllYouCanEat(unittest.TestCase):

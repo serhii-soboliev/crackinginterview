@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.dynamic.tasks.longest_common_subsequence import LongestCommonSubSequence
+from dynamic.tasks.longest_common_subsequence import LongestCommonSubSequence
 
 
 class TestLongestCommonSubsequence(unittest.TestCase):

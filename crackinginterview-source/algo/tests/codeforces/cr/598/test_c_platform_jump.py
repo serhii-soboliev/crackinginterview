@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.codeforces.cr.n598.с_platform_jump import jump_program
+from codeforces.cr.n598.с_platform_jump import jump_program
 
 
 class TestPlatformJump(unittest.TestCase):

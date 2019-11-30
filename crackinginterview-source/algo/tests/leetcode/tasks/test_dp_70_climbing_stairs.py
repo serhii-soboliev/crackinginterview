@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.tasks.dp_70_climbing_stairs import ClimbingStairs
+from leetcode.tasks.dp_70_climbing_stairs import ClimbingStairs
 
 
 class TestClimbingStairs(unittest.TestCase):

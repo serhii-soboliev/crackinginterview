@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.contest.wc163.wc163_1262_greates_sum_divisible_by_three import GreatestSumDivisibleByThree
+from leetcode.contest.wc163.wc163_1262_greates_sum_divisible_by_three import GreatestSumDivisibleByThree
 
 
 class TestGreatestSumDivisibleByThree(unittest.TestCase):

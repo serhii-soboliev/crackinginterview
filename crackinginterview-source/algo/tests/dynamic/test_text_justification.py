@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.dynamic.tasks.text_justification import justify_text, calc_cost_of_text_justification
+from dynamic.tasks.text_justification import justify_text, calc_cost_of_text_justification
 
 
 class TestTextJustification(unittest.TestCase):

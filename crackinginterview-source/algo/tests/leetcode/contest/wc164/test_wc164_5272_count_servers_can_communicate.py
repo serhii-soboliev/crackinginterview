@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.contest.wc164.wc164_5272_count_servers_can_communicate import CountServerCanCommunicate
+from leetcode.contest.wc164.wc164_5272_count_servers_can_communicate import CountServerCanCommunicate
 
 
 class TestCountServersCanCommunicate(unittest.TestCase):
