@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.dynamic.tasks.rod_cut import RodCut
+from dynamic.tasks.rod_cut import RodCut
 
 
 class TestRodCut(unittest.TestCase):

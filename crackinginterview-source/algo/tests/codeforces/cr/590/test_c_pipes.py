@@ -1,7 +1,7 @@
 import unittest
 from parameterized import parameterized
 
-from algo.codeforces import is_water_flow_possible
+from codeforces.cr.n590.c_pipes import is_water_flow_possible
 
 
 class TestPipes(unittest.TestCase):

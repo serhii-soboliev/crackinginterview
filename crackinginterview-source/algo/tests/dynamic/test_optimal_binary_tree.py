@@ -1,7 +1,7 @@
 import unittest
 from parameterized import parameterized
 
-from algo.dynamic.tasks.optimal_binary_tree import OptimalBinaryTree
+from dynamic.tasks.optimal_binary_tree import OptimalBinaryTree
 
 
 class TestOptimalBinaryTree(unittest.TestCase):

@@ -1,6 +1,6 @@
 import unittest
 
-from algo.DailyCodingProblem import XorLinkedList
+from DailyCodingProblem.dcp.xor_linked_list import XorLinkedList
 
 
 class TestXorLinkedList(unittest.TestCase):

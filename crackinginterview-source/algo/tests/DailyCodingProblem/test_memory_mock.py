@@ -1,6 +1,6 @@
 import unittest
 
-from algo.DailyCodingProblem import MemoryMock
+from DailyCodingProblem.dcp.xor_linked_list import MemoryMock
 
 
 class TestMemoryMock(unittest.TestCase):

@@ -1,5 +1,6 @@
 import unittest
-from algo.DailyCodingProblem import ConsCarCdr
+
+from DailyCodingProblem.dcp.cons_car_cdr import ConsCarCdr
 
 
 class TestConsCarCdr(unittest.TestCase):

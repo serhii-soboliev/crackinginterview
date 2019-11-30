@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.str.string import String
+from str.string import String
 
 
 class TestString(unittest.TestCase):

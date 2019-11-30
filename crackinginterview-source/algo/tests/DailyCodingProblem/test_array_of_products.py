@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.DailyCodingProblem import ArrayOfProducts
+from DailyCodingProblem.dcp.array_of_products import ArrayOfProducts
 
 
 class TestArrayOfProducts(unittest.TestCase):
