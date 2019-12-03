@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from leetcode.contest.wc165.wc165_5277_square_matrix_cnt import SquareSubMatrixCount
+from algo.leetcode.contest.wc165.wc165_5277_square_matrix_cnt import SquareSubMatrixCount
 
 
 class TestSquareSubMatrixCnt(unittest.TestCase):
@@ -25,3 +25,4 @@ class TestSquareSubMatrixCnt(unittest.TestCase):
     ])
     def test_odd_cells(self, name, matrix, expected):
         self.assertEqual(expected, SquareSubMatrixCount().result(matrix))
+        self.assertEqual(expected, SquareSubMatrixCount().result_dp(matrix))
