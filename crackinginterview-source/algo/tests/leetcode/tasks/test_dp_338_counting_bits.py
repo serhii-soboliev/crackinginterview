@@ -5,7 +5,7 @@ from parameterized import parameterized
 from algo.leetcode.tasks.dp_338_counting_bits import CountingBits
 
 
-class TestNumberOfIslands(unittest.TestCase):
+class TestCountingBits(unittest.TestCase):
 
     @parameterized.expand([
         ['0', 2, [0, 1, 1]],
