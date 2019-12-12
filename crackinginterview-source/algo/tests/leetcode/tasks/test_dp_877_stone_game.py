@@ -1,9 +1,7 @@
 import unittest
 
+from leetcode.tasks.dp_877_stone_game import StoneGame
 from parameterized import parameterized
-
-from algo.leetcode.tasks.dp_338_counting_bits import CountingBits
-from algo.leetcode.tasks.dp_877_stone_game import StoneGame
 
 
 class TestStoneGame(unittest.TestCase):
