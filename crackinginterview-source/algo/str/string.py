@@ -47,6 +47,45 @@ class String:
                 cur_letter = s[cur_s_index]
         return False
 
+    def palindrome_partitioning_3(self, s: str, k: int) -> int:
+        n = len(s)
+        dp = [[0 for _ in range(k+1)] for _ in range(n)]
+        for i in range(n):
+            max_partition = min(i + 1, k)
+            prefix = s[:i + 1]
+            dp[i][1] = self.cost_to_make_palindrome_from_string(prefix)
+            for j in range(2, max_partition+1):
+                curr_min = n
+                for p in range(j - 1, i+1):
+                    suffix = prefix[p:]
+                    curr_min = min(curr_min, dp[p - 1][j - 1] + self.cost_to_make_palindrome_from_string(suffix))
+                dp[i][j] = curr_min
+        return dp[n-1][k]
+
+    def palindrome_partitioning_3_v2(self, s: str, k: int) -> int:
+        n = len(s)
+
+        def dp(i, p):
+            if (i,p) not in memo:
+                if p == 1:
+                    memo[i,p] = self.cost_to_make_palindrome_from_string(s[:i+1])
+                else:
+                    memo[i, p] = min(
+                        dp(j, p-1) + self.cost_to_make_palindrome_from_string(s[j + 1:i + 1]) for j in range(p - 2, i)
+                    )
+            return memo[i,p]
+
+        memo = {}
+        return dp(n-1, k)
+
+
+    def cost_to_make_palindrome_from_string(self, s: str) -> int:
+        n = len(s)
+        cost = 0
+        for i in range(n // 2):
+            cost += (s[i] != s[n - i - 1])
+        return cost
+
     def __str__(self) -> str:
         return self._in_str
 

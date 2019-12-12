@@ -2,8 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.tasks.dp_1130_minimum_cost_of_tree_from_leaf_values import MctFromLeafValues
-from algo.leetcode.tasks.dp_338_counting_bits import CountingBits
+from leetcode.tasks.dp_1130_minimum_cost_of_tree_from_leaf_values import MctFromLeafValues
 
 
 class TestMctFromLeafValues(unittest.TestCase):

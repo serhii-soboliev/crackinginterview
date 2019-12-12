@@ -42,3 +42,17 @@ class TestString(unittest.TestCase):
         self.assertEqual(expected,
                          String("").is_subsequence(s, t),
                          "Test #{}.{} is substring for {}".format(name, s, t) if expected else "{} is substring for {}".format(name, s, t))
+
+
+    @parameterized.expand([
+        ['1', "abc", 2, 1],
+        ['2', "aabbc", 3, 0],
+        ['3', "leetcode", 8, 0]
+    ])
+    def test_palindrome_partitioning_3(self, name, s, k, expected):
+        self.assertEqual(expected,
+                         String("").palindrome_partitioning_3(s, k),
+                         "Test #{} is wrong".format(name))
+        self.assertEqual(expected,
+                         String("").palindrome_partitioning_3_v2(s, k),
+                         "Test #{} is wrong".format(name))
