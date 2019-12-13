@@ -56,3 +56,17 @@ class TestString(unittest.TestCase):
         self.assertEqual(expected,
                          String("").palindrome_partitioning_3_v2(s, k),
                          "Test #{} is wrong".format(name))
+
+    @parameterized.expand([
+        ['0', "aaaaa", 15],
+        ['1', "abba", 6],
+        ['2', "", 0],
+        ['3', "abc", 3],
+        ['4', "aa", 3],
+        ['5', "aaa", 6],
+        ['6', "y", 1]
+    ])
+    def test_palindromic_substrings_count(self, name, s, expected):
+        self.assertEqual(expected,
+                         String("").palindromic_substrings_count(s),
+                         "Test #{}.{} comprises {} palindromes".format(name, s,expected))

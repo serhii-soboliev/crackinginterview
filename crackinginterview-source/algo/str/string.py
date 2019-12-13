@@ -86,6 +86,22 @@ class String:
             cost += (s[i] != s[n - i - 1])
         return cost
 
+    def palindromic_substrings_count(self, s:str) -> int:
+        if not s:
+            return 0
+        if len(s) == 1:
+            return 1
+        n = len(s)
+        cnt = 0
+        for center in range(0, 2*n+2):
+            left = center // 2
+            right = left + center % 2
+            while left >= 0 and right < n and (s[left] == s[right]):
+                cnt += 1
+                left -= 1
+                right += 1
+        return cnt
+
     def __str__(self) -> str:
         return self._in_str
 
