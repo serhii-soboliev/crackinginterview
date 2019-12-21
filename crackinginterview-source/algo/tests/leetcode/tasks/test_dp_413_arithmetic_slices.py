@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.tasks.dp_413_arithmetic_slices import number_of_arithmetic_slices
+from leetcode.tasks.dp_413_arithmetic_slices import number_of_arithmetic_slices
 
 
 class TestArithmeticSlices(unittest.TestCase):

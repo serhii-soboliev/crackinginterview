@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.contest.wc165.wc165_5277_square_matrix_cnt import SquareSubMatrixCount
+from leetcode.contest.wc165.wc165_5277_square_matrix_cnt import SquareSubMatrixCount
 
 
 class TestSquareSubMatrixCnt(unittest.TestCase):

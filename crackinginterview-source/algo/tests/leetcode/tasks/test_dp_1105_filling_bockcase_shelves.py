@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.tasks.dp_1105_filling_bookcase_shelves import MinHeightShelves
+from leetcode.tasks.dp_1105_filling_bookcase_shelves import MinHeightShelves
 
 
 class TestMinHeightShelves(unittest.TestCase):

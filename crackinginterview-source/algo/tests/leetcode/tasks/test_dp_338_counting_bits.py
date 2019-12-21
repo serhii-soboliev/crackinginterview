@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from algo.leetcode.tasks.dp_338_counting_bits import CountingBits
+from leetcode.tasks.dp_338_counting_bits import CountingBits
 
 
 class TestCountingBits(unittest.TestCase):
