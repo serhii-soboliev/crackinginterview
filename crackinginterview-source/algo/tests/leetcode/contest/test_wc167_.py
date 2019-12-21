@@ -8,7 +8,6 @@ from leetcode.contest.wc167.wc167_ import ListNode
 
 class TestWC167(unittest.TestCase):
 
-
     @parameterized.expand([
         ['0', [
             [0, 0, 0],
@@ -22,6 +21,16 @@ class TestWC167(unittest.TestCase):
             [1, 1, 1],
             [1, 0, 0]
         ], 1, -1],
+        ['1', [
+            [0, 1],
+            [1, 1],
+            [0, 0]],
+         2, 3],
+        ['3', [
+            [0, 1, 1],
+            [1, 1, 1],
+            [1, 0, 0]
+        ], 1, -1]
     ])
     def test_shortestPath(self, name, m, t, expected):
         self.assertEqual(expected, Solution().shortestPath(m, t))
@@ -68,4 +77,3 @@ class TestWC167(unittest.TestCase):
     ])
     def test_sequentialDigits(self, name, m, t, expected):
         self.assertEqual(expected, Solution().maxSideLength(m, t))
-
