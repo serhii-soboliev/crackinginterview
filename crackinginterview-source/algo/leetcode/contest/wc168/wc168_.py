@@ -19,12 +19,11 @@ class Solution:
             current_boxes = new_boxes
         return candies_cnt
 
-
     def maxFreq(self, s, maxLetters, minSize, maxSize):
         n = len(s)
         sub_dict = {}
         for i in range(n - minSize + 1):
-            sub = s[i:i+minSize]
+            sub = s[i:i + minSize]
             if sub in sub_dict:
                 sub_dict[sub] = sub_dict[sub] + 1
             elif len(set(list(sub))) <= maxLetters:
@@ -72,3 +71,26 @@ class Solution:
                                     else:
                                         new_min += 1
             return True
+
+    def isValid(self, st: str) -> bool:
+        par = []
+        for s in st:
+            if s == "(":
+                par.append(s)
+            if s == ")":
+                if not par or par.pop() != "(":
+                    return False
+
+            if s == "{":
+                par.append(s)
+            if s == "}":
+                if not par or par.pop() != "{":
+                    return False
+
+            if s == "[":
+                par.append(s)
+            if s == "]":
+                if not par or par.pop() != "[":
+                    return False
+
+        return not par

@@ -42,3 +42,9 @@ class TestWC168(unittest.TestCase):
     ])
     def test_sequentialDigits(self, name, nums, k, expected):
         self.assertEqual(expected, Solution().isPossibleDivide(nums, k))
+
+    @parameterized.expand([
+        ['0', "{[]}", True]
+    ])
+    def test_isvalid(self, name, s, expected):
+        self.assertEqual(expected, Solution().isValid(s))
