@@ -2,8 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from leetcode.contest.wc168.wc168_ import Solution
-
+from algo.leetcode.contest.wc168.wc168_ import Solution
 
 class TestWC168(unittest.TestCase):
 

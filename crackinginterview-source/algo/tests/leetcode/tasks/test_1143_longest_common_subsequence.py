@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from leetcode.tasks.dp_1143_longest_common_subsequence import LongestCommonSubsequence
+from algo.leetcode.tasks.dp_1143_longest_common_subsequence import LongestCommonSubsequence
 
 
 class TestLongestCommonSubsequence(unittest.TestCase):
