@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 
-from leetcode.tasks.dp_198_house_robber import HouseRobber
+from algo.leetcode.tasks.dp_198_house_robber import HouseRobber
 
 
 class TestHouseRobber(unittest.TestCase):
